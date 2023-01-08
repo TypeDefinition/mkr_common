@@ -27,8 +27,6 @@ namespace mkr {
         }
 
     public:
-        static constexpr uint64_t INVALID_ID = 0;
-
         family() = delete;
 
         /**
@@ -44,7 +42,7 @@ namespace mkr {
 
     /// Type id starts from 1.
     template<typename B>
-    std::atomic<uint64_t> family<B>::current_id_ = 1;
+    std::atomic<uint64_t> family<B>::current_id_ = 0;
 
 #define FAMILY_ID(__BASE__, __DERIVED__) family<__BASE__>::get_id< __DERIVED__>()
 }
