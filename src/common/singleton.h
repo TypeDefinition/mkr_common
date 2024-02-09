@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 namespace mkr {
     template<typename T>
     class singleton {

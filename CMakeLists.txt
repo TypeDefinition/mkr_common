@@ -1,5 +1,5 @@
 # CMake Version
-cmake_minimum_required(VERSION 3.23.2)
+cmake_minimum_required(VERSION 3.27.8)
 # Project Name
 project(mkr_common_lib)
 
@@ -21,3 +21,7 @@ add_library(${PROJECT_NAME} ${SRC_FILES})
 # Target
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
 target_include_directories(${PROJECT_NAME} PUBLIC ${SRC_DIR})
+
+# Test
+enable_testing()
+add_subdirectory(test)
