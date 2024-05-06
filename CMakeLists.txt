@@ -1,16 +1,19 @@
 # CMake Version
 cmake_minimum_required(VERSION 3.27.8)
+
 # Project Name
 project(mkr_common_lib)
 
-# C++ Version
-set(CMAKE_CXX_STANDARD 20)
-
-# Compiler Flags
-set(CMAKE_CXX_FLAGS "-std=c++20 -O3")
+# CMake Flags
+# set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # mkr Engine
-set(SRC_DIR "src/")
+set(SRC_DIR "src")
 file(GLOB_RECURSE SRC_FILES LIST_DIRECTORIES true CONFIGURE_DEPENDS
         "${SRC_DIR}/*.h"
         "${SRC_DIR}/*.c"
