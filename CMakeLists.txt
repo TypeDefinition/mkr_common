@@ -2,13 +2,9 @@
 cmake_minimum_required(VERSION 3.27.8)
 
 # Project Name
-project(mkr_common_lib)
+project(mkr_common)
 
 # CMake Flags
-# set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_BUILD_TYPE Release)
-set(CMAKE_CXX_FLAGS_DEBUG "-g")
-set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
