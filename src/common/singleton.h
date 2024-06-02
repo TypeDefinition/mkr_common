@@ -6,12 +6,11 @@ namespace mkr {
     private:
         static T* instance_;
 
-    protected:
+    public:
         singleton() {}
 
         virtual ~singleton() {}
 
-    public:
         static T& instance() {
             return instance_ ? *instance_ : *(instance_ = new T());
         }
