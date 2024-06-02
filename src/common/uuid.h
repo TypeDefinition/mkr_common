@@ -15,7 +15,7 @@ namespace mkr {
 
     public:
         uuid() : id_(distribution(engine)) {}
-        uuid(const uuid &) = default;
+        uuid(const uuid&) = default;
         explicit uuid(uint64_t _id) : id_(_id) {}
 
         uuid& operator=(const uuid& _rhs) = default;
@@ -28,14 +28,13 @@ namespace mkr {
 
         explicit operator uint64_t() const { return id_; }
     };
-
-}
+} // mkr
 
 namespace std {
-    template<>
+    template <>
     struct hash<::mkr::uuid> {
-        std::size_t operator()(const ::mkr::uuid &_uuid) const {
-            return std::hash<uint64_t>{}((uint64_t) _uuid);
+        std::size_t operator()(const ::mkr::uuid& _uuid) const {
+            return std::hash<uint64_t>{}(static_cast<uint64_t>(_uuid));
         }
     };
-}
+} // std

@@ -1,7 +1,7 @@
 #pragma once
 
 namespace mkr {
-    template<typename T>
+    template <typename T>
     class singleton {
     private:
         static T* instance_;
@@ -22,6 +22,6 @@ namespace mkr {
         }
     };
 
-    template<typename T>
+    template <typename T>
     T* singleton<T>::instance_ = nullptr;
-}
+} // mkr

@@ -24,7 +24,7 @@ namespace mkr {
          * @tparam T The type to generate the id of. This type is cv removed.
          * @return The type id of class T.
          */
-        template<typename T>
+        template <typename T>
         static type_id_t generate() {
             static type_id_t id = current_id_++;
             return id;
@@ -38,7 +38,7 @@ namespace mkr {
          * @tparam The class type.
          * @return The type id of T.
          */
-        template<typename T>
+        template <typename T>
         static type_id_t value() {
             return generate<std::remove_cvref_t<T>>();
         }
@@ -47,4 +47,6 @@ namespace mkr {
     /// Type id starts from 0.
     template <typename Category>
     std::atomic<type_id_t> type_id<Category>::current_id_ = 0;
-}
+
+    #define MKR_TYPE_ID(Category, Type) type_id<Category>::value<T>()
+} // mkr
